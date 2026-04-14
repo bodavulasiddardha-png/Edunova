@@ -386,14 +386,62 @@ function showTab(id, btn) {
 function g(id) { var e = document.getElementById(id); return e ? e.value : ''; }
 
 function submitForm() {
-  var name = g('f_name'), phone = g('f_phone');
-  if (!name || !phone) { alert('Student Name and Phone required!'); return; }
+  var fields = [
+    { id:'f_name',    label:'Student Full Name' },
+    { id:'f_phone',   label:'Phone Number' },
+    { id:'f_aadhar',  label:'Aadhar Number' },
+    { id:'f_email',   label:'Email ID' },
+    { id:'f_course',  label:'Preferred Course' },
+    { id:'f_tenth',   label:'10th Percentage' },
+    { id:'f_twelfth', label:'12th / Diploma %' },
+    { id:'f_city',    label:'Current City / State' }
+  ];
+  for (var i = 0; i < fields.length; i++) {
+    var el = document.getElementById(fields[i].id);
+    if (!el || !el.value.trim()) {
+      if (el) {
+        el.style.borderColor = '#e53935';
+        el.style.boxShadow = '0 0 0 3px rgba(229,57,53,0.15)';
+        el.scrollIntoView({ behavior:'smooth', block:'center' });
+        el.focus();
+      }
+      alert('⚠️ ' + fields[i].label + ' fill cheyyandi!');
+      return;
+    } else {
+      el.style.borderColor = '#dde6f5';
+      el.style.boxShadow = 'none';
+    }
+  }
+  var phone = g('f_phone').replace(/\s/g,'');
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    var ph = document.getElementById('f_phone');
+    ph.style.borderColor = '#e53935';
+    ph.focus();
+    alert('⚠️ Valid phone number enter cheyyandi! (10 digits)');
+    return;
+  }
+  var aadhar = g('f_aadhar').replace(/\s/g,'');
+  if (!/^\d{12}$/.test(aadhar)) {
+    var aa = document.getElementById('f_aadhar');
+    aa.style.borderColor = '#e53935';
+    aa.focus();
+    alert('⚠️ Valid Aadhar number enter cheyyandi! (12 digits)');
+    return;
+  }
+  var email = g('f_email');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    var em = document.getElementById('f_email');
+    em.style.borderColor = '#e53935';
+    em.focus();
+    alert('⚠️ Valid Email ID enter cheyyandi!');
+    return;
+  }
   var states = Array.from(document.querySelectorAll('.scb:checked')).map(function(c){return c.value;}).join(', ') || 'None';
   var others = Array.from(document.querySelectorAll('.ocb:checked')).map(function(c){return c.value;}).join(', ') || 'None';
   var data = {
     timestamp: new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'}),
-    studentName:name, dob:g('f_dob'), gender:g('f_gender'),
-    phone:phone, aadhar:g('f_aadhar'), email:g('f_email'),
+    studentName:g('f_name'), dob:g('f_dob'), gender:g('f_gender'),
+    phone:phone, aadhar:aadhar, email:email,
     tenth:g('f_tenth'), twelfth:g('f_twelfth'), course:g('f_course'), city:g('f_city'),
     fatherName:g('f_fname'), fatherPhone:g('f_fphone'),
     motherName:g('f_mname'), motherPhone:g('f_mphone'),
@@ -406,10 +454,11 @@ function submitForm() {
   .then(function(){
     document.getElementById('okMsg').style.display = 'block';
     document.getElementById('okMsg').scrollIntoView({behavior:'smooth',block:'center'});
-    btn.textContent = 'Submitted!';
+    btn.textContent = '✅ Submitted!';
   }).catch(function(){
     alert('Error! Call us: +91 83742 34110');
-    btn.textContent = 'Submit Free Enquiry'; btn.disabled = false;
+    btn.textContent = '🚀 Submit Free Enquiry';
+    btn.disabled = false;
   });
 }
 
