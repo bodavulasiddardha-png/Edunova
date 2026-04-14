@@ -405,7 +405,7 @@ function submitForm() {
         el.scrollIntoView({ behavior:'smooth', block:'center' });
         el.focus();
       }
-      alert('⚠️ ' + fields[i].label + ' fill cheyyandi!');
+      alert('⚠️ ' + fields[i].label + ' is Required!');
       return;
     } else {
       el.style.borderColor = '#dde6f5';
@@ -417,7 +417,7 @@ function submitForm() {
     var ph = document.getElementById('f_phone');
     ph.style.borderColor = '#e53935';
     ph.focus();
-    alert('⚠️ Valid phone number enter cheyyandi! (10 digits)');
+    alert('⚠️ Valid phone number must be! (10 digits)');
     return;
   }
   var aadhar = g('f_aadhar').replace(/\s/g,'');
@@ -425,7 +425,7 @@ function submitForm() {
     var aa = document.getElementById('f_aadhar');
     aa.style.borderColor = '#e53935';
     aa.focus();
-    alert('⚠️ Valid Aadhar number enter cheyyandi! (12 digits)');
+    alert('⚠️ Valid Aadhar number must be! (12 digits)');
     return;
   }
   var email = g('f_email');
@@ -433,7 +433,7 @@ function submitForm() {
     var em = document.getElementById('f_email');
     em.style.borderColor = '#e53935';
     em.focus();
-    alert('⚠️ Valid Email ID enter cheyyandi!');
+    alert('⚠️ Enter Valid E mail Id!');
     return;
   }
   var states = Array.from(document.querySelectorAll('.scb:checked')).map(function(c){return c.value;}).join(', ') || 'None';
