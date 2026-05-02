@@ -12,23 +12,24 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Edunova Consultancy – Your Future Starts Here</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --cream: #fdf8ee;
-    --cream-dark: #f7efda;
-    --cream-deeper: #f0e4c4;
-    --gold: #c8860a;
-    --gold-light: #f0a500;
-    --gold-pale: #fde8a0;
-    --gold-vivid: #ffbe18;
-    --navy: #1a1a2e;
-    --text-dark: #1a1000;
-    --text-mid: #3d2e00;
-    --text-muted: #7a6a40;
+    --cream: #f0f4ff;
+    --cream-dark: #e4ecff;
+    --cream-deeper: #d6e3ff;
+    --gold: #d4a017;
+    --gold-light: #f0b429;
+    --gold-pale: #fde9a2;
+    --navy: #0d1b4b;
+    --navy-mid: #1a2f6e;
+    --navy-light: #1e3a8a;
+    --text-dark: #0a1628;
+    --text-mid: #334155;
+    --text-muted: #64748b;
     --white: #ffffff;
-    --border: rgba(200,134,10,0.22);
-    --border-dark: rgba(200,134,10,0.4);
+    --border: rgba(30,58,138,0.15);
+    --border-dark: rgba(30,58,138,0.28);
   }
 
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -50,7 +51,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
-    background: rgba(10,6,0,0.97);
+    background: rgba(10,22,60,0.97);
     backdrop-filter: blur(16px);
   }
 
@@ -63,16 +64,16 @@
 
   .logo-mark {
     width: 36px; height: 36px;
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem; font-weight: 700;
-    color: #1a1200;
+    color: #060e2e;
   }
 
   .logo-text {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.25rem; font-weight: 700;
     color: var(--white); letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -134,15 +135,15 @@
     position: absolute; inset: 0;
     background:
       linear-gradient(105deg,
-        rgba(12,8,0,0.92) 0%,
-        rgba(20,12,0,0.76) 45%,
-        rgba(20,12,0,0.42) 70%,
-        rgba(20,12,0,0.18) 100%
+        rgba(8,15,50,0.92) 0%,
+        rgba(8,15,50,0.76) 45%,
+        rgba(8,15,50,0.48) 70%,
+        rgba(8,15,50,0.28) 100%
       ),
       linear-gradient(180deg,
-        rgba(12,8,0,0.45) 0%,
-        rgba(12,8,0,0.08) 40%,
-        rgba(12,8,0,0.55) 100%
+        rgba(8,15,50,0.45) 0%,
+        rgba(8,15,50,0.12) 40%,
+        rgba(8,15,50,0.55) 100%
       );
   }
 
@@ -150,7 +151,7 @@
   .hero-img::before {
     content: '';
     position: absolute; inset: 0; z-index: 1;
-    background: linear-gradient(0deg, rgba(200,134,10,0.22) 0%, transparent 45%);
+    background: linear-gradient(0deg, rgba(184,146,42,0.12) 0%, transparent 40%);
   }
 
   .hero-inner {
@@ -167,8 +168,8 @@
 
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(184,146,42,0.15);
-    border: 1px solid rgba(184,146,42,0.35);
+    background: rgba(30,58,138,0.25);
+    border: 1px solid rgba(240,180,41,0.45);
     border-radius: 100px;
     padding: 0.35rem 1rem;
     font-size: 0.72rem; font-weight: 600;
@@ -179,7 +180,7 @@
   }
 
   h1.hero-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(2.8rem, 5.5vw, 5rem);
     font-weight: 700;
     color: var(--white);
@@ -205,8 +206,8 @@
 
   .btn-gold {
     display: inline-flex; align-items: center; gap: 0.45rem;
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
-    color: #1a0f00; font-weight: 700; font-size: 0.92rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #060e2e; font-weight: 700; font-size: 0.92rem;
     padding: 0.85rem 1.8rem; border-radius: 7px;
     text-decoration: none; border: none; cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -215,7 +216,7 @@
 
   .btn-gold:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(255,190,24,0.55);
+    box-shadow: 0 10px 28px rgba(184,146,42,0.4);
   }
 
   .btn-ghost {
@@ -243,7 +244,7 @@
   .hero-pill {
     display: flex; align-items: center; gap: 0.4rem;
     background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(184,146,42,0.25);
+    border: 1px solid rgba(240,180,41,0.3);
     border-radius: 100px;
     padding: 0.35rem 0.85rem;
     font-size: 0.78rem; color: rgba(255,255,255,0.8);
@@ -257,7 +258,7 @@
 
   /* ══ STATS TICKER ══ */
   .stats-ticker {
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
     padding: 0;
     overflow: hidden;
     position: relative;
@@ -283,11 +284,11 @@
     padding: 0.9rem 2.5rem;
     font-size: 0.78rem; font-weight: 700;
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: #1a0f00; border-right: 1px solid rgba(0,0,0,0.12);
+    color: #060e2e; border-right: 1px solid rgba(0,0,0,0.12);
     flex-shrink: 0;
   }
 
-  .ticker-item strong { font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; }
+  .ticker-item strong { font-size: 1.1rem; font-family: 'Poppins', sans-serif; }
 
   .ticker-highlight {
     background: rgba(0,0,0,0.15);
@@ -297,24 +298,24 @@
 
   /* ══ STATS GRID (after ticker) ══ */
   .stats-section {
-    background: #100900;
+    background: #0a1628;
     padding: 3.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
-    border-bottom: 1px solid rgba(200,134,10,0.25);
+    border-bottom: 1px solid rgba(30,58,138,0.3);
   }
 
   .stat-box {
     text-align: center;
     padding: 1.5rem 1rem;
-    border-right: 1px solid rgba(184,146,42,0.12);
+    border-right: 1px solid rgba(30,58,138,0.25);
   }
 
   .stat-box:last-child { border-right: none; }
 
   .stat-num {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 3.2rem; font-weight: 700;
     color: var(--gold-light); line-height: 1;
     display: block;
@@ -345,7 +346,7 @@
   }
 
   h2.section-h {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700; line-height: 1.15;
     color: var(--text-dark); margin-bottom: 0.8rem;
@@ -373,7 +374,7 @@
   .why-card:hover {
     transform: translateY(-5px);
     border-color: var(--gold);
-    box-shadow: 0 12px 32px rgba(200,134,10,0.2);
+    box-shadow: 0 12px 32px rgba(184,146,42,0.12);
   }
 
   .why-icon {
@@ -385,7 +386,7 @@
   }
 
   .why-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.2rem; font-weight: 600;
     color: var(--text-dark); margin-bottom: 0.5rem;
   }
@@ -416,7 +417,7 @@
 
   .tab-btn:hover, .tab-btn.active {
     background: var(--gold);
-    color: #1a0f00; border-color: var(--gold);
+    color: #060e2e; border-color: var(--gold);
     font-weight: 700;
   }
 
@@ -464,7 +465,7 @@
     content: '';
     position: absolute; top: 2.2rem; left: 12.5%; right: 12.5%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(184,146,42,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(240,180,41,0.45), transparent);
   }
 
   .step-card {
@@ -473,15 +474,15 @@
 
   .step-num {
     width: 48px; height: 48px;
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
     border-radius: 50%; margin: 0 auto 1.4rem;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 700; color: #1a0f00;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem; font-weight: 700; color: #060e2e;
   }
 
   .step-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.1rem; font-weight: 600;
     color: var(--gold-light); margin-bottom: 0.5rem;
   }
@@ -504,7 +505,7 @@
   }
 
   .contact-left h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2rem; font-weight: 700;
     color: var(--text-dark); margin-bottom: 0.8rem;
     line-height: 1.2;
@@ -550,7 +551,7 @@
 
   .btn-wa-big:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(37,211,102,0.45);
+    box-shadow: 0 10px 28px rgba(37,211,102,0.35);
   }
 
   /* Contact Form */
@@ -562,7 +563,7 @@
   }
 
   .enq-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem; font-weight: 700;
     color: var(--text-dark); margin-bottom: 0.3rem;
   }
@@ -613,8 +614,8 @@
 
   .btn-enq-submit {
     width: 100%; padding: 0.95rem;
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
-    color: #1a0f00; font-weight: 700; font-size: 0.95rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: #060e2e; font-weight: 700; font-size: 0.95rem;
     border: none; border-radius: 8px; cursor: pointer;
     font-family: 'Poppins', sans-serif;
     transition: transform 0.2s, box-shadow 0.2s; margin-top: 0.5rem;
@@ -622,7 +623,7 @@
 
   .btn-enq-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(255,190,24,0.45);
+    box-shadow: 0 10px 28px rgba(184,146,42,0.35);
   }
 
   .enq-success {
@@ -631,14 +632,14 @@
 
   .enq-success .s-circle {
     width: 58px; height: 58px;
-    background: linear-gradient(135deg, #c8860a, #ffbe18);
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
     border-radius: 50%; margin: 0 auto 1rem;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.4rem;
   }
 
   .enq-success h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.5rem; color: var(--text-dark); margin-bottom: 0.4rem;
   }
 
@@ -646,14 +647,14 @@
 
   /* ══ FOOTER ══ */
   footer {
-    background: #080500;
+    background: #060e2e;
     padding: 3.5rem 3.5rem 1.5rem;
   }
 
   .footer-top {
     display: grid; grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem; padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(184,146,42,0.12);
+    border-bottom: 1px solid rgba(30,58,138,0.25);
     margin-bottom: 1.5rem;
   }
 
@@ -740,7 +741,7 @@
   .mobile-menu {
     display: none;
     position: fixed; inset: 0; z-index: 150;
-    background: rgba(15,10,4,0.97);
+    background: rgba(8,15,50,0.98);
     flex-direction: column; align-items: center; justify-content: center;
     gap: 2.5rem;
     opacity: 0; pointer-events: none;
@@ -750,7 +751,7 @@
     display: flex; opacity: 1; pointer-events: all;
   }
   .mobile-menu a {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2.2rem; font-weight: 700;
     color: var(--white); text-decoration: none;
     letter-spacing: 0.04em;
@@ -805,8 +806,8 @@
       grid-template-columns: repeat(2, 1fr);
       padding: 1.8rem 1rem;
     }
-    .stat-box { border-right: none; border-bottom: 1px solid rgba(184,146,42,0.12); padding: 1.2rem 0.5rem; }
-    .stat-box:nth-child(odd) { border-right: 1px solid rgba(184,146,42,0.12); }
+    .stat-box { border-right: none; border-bottom: 1px solid rgba(30,58,138,0.2); padding: 1.2rem 0.5rem; }
+    .stat-box:nth-child(odd) { border-right: 1px solid rgba(30,58,138,0.2); }
     .stat-box:last-child, .stat-box:nth-last-child(2):nth-child(odd) { border-bottom: none; }
     .stat-num { font-size: 2.5rem; }
 
@@ -1398,47 +1399,27 @@
     const states = [...document.querySelectorAll('.cb-state:checked')].map(c => c.parentElement.textContent.trim()).join(', ');
     const others = [...document.querySelectorAll('.cb-opt:checked')].map(c => c.parentElement.textContent.trim()).join(', ');
 
-    const data = {
-      studentName: document.getElementById('f_name').value.trim(),
-      phone:       document.getElementById('f_phone').value.trim(),
-      email:       document.getElementById('f_email').value.trim(),
-      gender:      document.getElementById('f_gender').value.trim(),
-      tenth:       document.getElementById('f_tenth').value.trim(),
-      twelfth:     document.getElementById('f_twelfth').value.trim(),
-      course:      document.getElementById('f_course').value.trim(),
-      city:        document.getElementById('f_city').value.trim(),
-      fatherName:  document.getElementById('f_fname').value.trim(),
-      fatherPhone: document.getElementById('f_fphone').value.trim(),
-      income:      document.getElementById('f_income').value.trim(),
-      budget:      document.getElementById('f_budget').value.trim(),
-      states:      states,
-      others:      others,
-      referral:    document.getElementById('f_source').value.trim(),
-      message:     document.getElementById('f_msg').value.trim()
-    };
-
-    // Show loading state
     const btn = document.querySelector('.btn-enq-submit');
     btn.textContent = '⏳ Submitting...';
     btn.disabled = true;
 
     const params = new URLSearchParams();
-    params.append('studentName', data.studentName);
-    params.append('phone',       data.phone);
-    params.append('email',       data.email);
-    params.append('gender',      data.gender);
-    params.append('tenth',       data.tenth);
-    params.append('twelfth',     data.twelfth);
-    params.append('course',      data.course);
-    params.append('city',        data.city);
-    params.append('fatherName',  data.fatherName);
-    params.append('fatherPhone', data.fatherPhone);
-    params.append('income',      data.income);
-    params.append('budget',      data.budget);
-    params.append('states',      data.states);
-    params.append('others',      data.others);
-    params.append('referral',    data.referral);
-    params.append('message',     data.message);
+    params.append('studentName', document.getElementById('f_name').value.trim());
+    params.append('phone',       document.getElementById('f_phone').value.trim());
+    params.append('email',       document.getElementById('f_email').value.trim());
+    params.append('gender',      document.getElementById('f_gender').value.trim());
+    params.append('tenth',       document.getElementById('f_tenth').value.trim());
+    params.append('twelfth',     document.getElementById('f_twelfth').value.trim());
+    params.append('course',      document.getElementById('f_course').value.trim());
+    params.append('city',        document.getElementById('f_city').value.trim());
+    params.append('fatherName',  document.getElementById('f_fname').value.trim());
+    params.append('fatherPhone', document.getElementById('f_fphone').value.trim());
+    params.append('income',      document.getElementById('f_income').value.trim());
+    params.append('budget',      document.getElementById('f_budget').value.trim());
+    params.append('states',      states);
+    params.append('others',      others);
+    params.append('referral',    document.getElementById('f_source').value.trim());
+    params.append('message',     document.getElementById('f_msg').value.trim());
 
     fetch(SCRIPT_URL, {
       method: 'POST',
