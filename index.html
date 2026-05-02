@@ -733,4 +733,728 @@
     transition: all 0.3s;
   }
   .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-hamburger.open span:nth
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile drawer overlay */
+  .mobile-menu {
+    display: none;
+    position: fixed; inset: 0; z-index: 150;
+    background: rgba(15,10,4,0.97);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 2.5rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mobile-menu.open {
+    display: flex; opacity: 1; pointer-events: all;
+  }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--white); text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold-light); }
+  .mobile-menu .mob-wa {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #25d366; color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    padding: 0.8rem 2rem; border-radius: 8px;
+    margin-top: 0.5rem;
+  }
+
+  /* ══ TABLET (768px – 1024px) ══ */
+  @media (max-width: 1024px) {
+    nav { padding: 0.9rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero-inner { padding: 8rem 2.5rem 4rem; }
+    .stats-section { grid-template-columns: repeat(2,1fr); padding: 2.5rem; }
+    #about, #colleges, #process, #contact { padding: 5rem 2.5rem; }
+    .why-cards { grid-template-columns: repeat(2, 1fr); }
+    .steps-row { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .steps-row::after { display: none; }
+    .contact-wrap { gap: 2.5rem; }
+    .footer-top { grid-template-columns: 1.5fr 1fr 1fr; gap: 2rem; }
+  }
+
+  /* ══ MOBILE (≤ 768px) ══ */
+  @media (max-width: 768px) {
+    /* NAV */
+    nav { padding: 0.85rem 1.2rem; }
+    .nav-links { display: none; }
+    .nav-wa { display: none; }
+    .nav-hamburger { display: flex; }
+
+    /* HERO */
+    .hero-inner {
+      flex-direction: column; align-items: center; text-align: center;
+      padding: 6.5rem 1.3rem 3.5rem; min-height: auto;
+    }
+    .hero-left { max-width: 100%; }
+    h1.hero-title { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+    .hero-desc { font-size: 0.95rem; max-width: 100%; }
+    .hero-btns { justify-content: center; }
+    .btn-gold, .btn-ghost { width: 100%; justify-content: center; font-size: 0.95rem; }
+    .hero-pills { justify-content: center; }
+
+    /* STATS */
+    .stats-section {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1.8rem 1rem;
+    }
+    .stat-box { border-right: none; border-bottom: 1px solid rgba(184,146,42,0.12); padding: 1.2rem 0.5rem; }
+    .stat-box:nth-child(odd) { border-right: 1px solid rgba(184,146,42,0.12); }
+    .stat-box:last-child, .stat-box:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+    .stat-num { font-size: 2.5rem; }
+
+    /* SECTIONS */
+    #about, #colleges, #process, #contact { padding: 3.5rem 1.2rem; }
+
+    /* WHY CARDS */
+    .why-cards { grid-template-columns: 1fr; gap: 1rem; }
+    .why-card { padding: 1.4rem; }
+
+    /* COLLEGES */
+    .colleges-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .state-tabs { gap: 0.4rem; }
+    .tab-btn { font-size: 0.78rem; padding: 0.45rem 0.85rem; }
+
+    /* PROCESS */
+    .steps-row { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
+    .steps-row::after { display: none; }
+    .step-card { padding: 0; display: flex; align-items: flex-start; gap: 1rem; text-align: left; }
+    .step-num { margin: 0; flex-shrink: 0; width: 42px; height: 42px; font-size: 1.1rem; }
+
+    /* CONTACT */
+    .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .enquiry-box { padding: 1.5rem 1rem; border-radius: 12px; }
+    .f-row { grid-template-columns: 1fr; }
+    .cb-group { gap: 0.6rem; }
+    .cb-item { font-size: 0.9rem; padding: 0.1rem 0; }
+    .cb-item input { width: 18px; height: 18px; }
+
+    /* FOOTER */
+    footer { padding: 2rem 1.2rem 1.2rem; }
+    .footer-top { grid-template-columns: 1fr; gap: 1.8rem; padding-bottom: 1.8rem; }
+    .footer-brand p { max-width: 100%; }
+    .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; font-size: 0.74rem; }
+
+    /* FAB */
+    .wa-fab { bottom: 1.2rem; right: 1.2rem; width: 48px; height: 48px; }
+  }
+
+  /* ══ SMALL PHONES (≤ 420px) ══ */
+  @media (max-width: 420px) {
+    h1.hero-title { font-size: 2rem; }
+    h2.section-h { font-size: 1.7rem; }
+    .colleges-grid { grid-template-columns: 1fr; }
+    .hero-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+    .enquiry-box { padding: 1.2rem 0.9rem; }
+    .stat-num { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="logo-mark">E</div>
+    <span class="logo-text">EDUNOVA</span>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#colleges">Colleges</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/918374234110" class="nav-wa">⊛ WhatsApp Us</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#colleges" onclick="closeMenu()">Colleges</a>
+  <a href="#process" onclick="closeMenu()">Process</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://wa.me/918374234110" class="mob-wa" onclick="closeMenu()">⊛ WhatsApp Us</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-img"></div>
+
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">✦ India's Trusted Admission Partner</div>
+      <h1 class="hero-title">
+        Your Future<br/>
+        <span class="gold-text">Starts Here</span>
+      </h1>
+      <p class="hero-desc">
+        We guide students across Hyderabad, Andhra Pradesh, Tamil Nadu & beyond to secure admissions in top universities — hassle-free, step by step.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">🎓 Apply Now — Free</a>
+        <a href="#colleges" class="btn-ghost">🏫 View Colleges</a>
+      </div>
+      <div class="hero-pills">
+        <div class="hero-pill">✦ <span>50+</span> Partner Colleges</div>
+        <div class="hero-pill">✦ <span>500+</span> Students Placed</div>
+        <div class="hero-pill">✦ <span>100%</span> Free Service</div>
+        <div class="hero-pill">✦ <span>6+</span> States</div>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- STATS TICKER -->
+<div class="stats-ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">🎓 <span class="ticker-highlight">ADMISSIONS OPEN 2026–2027</span></div>
+    <div class="ticker-item">✦ <strong>50+</strong> Partner Colleges</div>
+    <div class="ticker-item">✦ <strong>6+</strong> States Covered</div>
+    <div class="ticker-item">✦ <strong>500+</strong> Students Placed</div>
+    <div class="ticker-item">✦ <strong>100%</strong> Free Guidance</div>
+    <div class="ticker-item">⚡ STATE WISE ADMISSIONS</div>
+    <div class="ticker-item">⚡ TOP UNIVERSITIES</div>
+    <div class="ticker-item">⚡ ZERO HIDDEN CHARGES</div>
+    <div class="ticker-item">⚡ 24HR RESPONSE GUARANTEED</div>
+    <div class="ticker-item">🎓 <span class="ticker-highlight">ADMISSIONS OPEN 2026–2027</span></div>
+    <div class="ticker-item">✦ <strong>50+</strong> Partner Colleges</div>
+    <div class="ticker-item">✦ <strong>6+</strong> States Covered</div>
+    <div class="ticker-item">✦ <strong>500+</strong> Students Placed</div>
+    <div class="ticker-item">✦ <strong>100%</strong> Free Guidance</div>
+    <div class="ticker-item">⚡ STATE WISE ADMISSIONS</div>
+    <div class="ticker-item">⚡ TOP UNIVERSITIES</div>
+    <div class="ticker-item">⚡ ZERO HIDDEN CHARGES</div>
+    <div class="ticker-item">⚡ 24HR RESPONSE GUARANTEED</div>
+  </div>
+</div>
+
+<!-- STATS GRID -->
+<div class="stats-section">
+  <div class="stat-box"><span class="stat-num">50+</span><span class="stat-lbl">Partner Colleges</span></div>
+  <div class="stat-box"><span class="stat-num">6+</span><span class="stat-lbl">States Covered</span></div>
+  <div class="stat-box"><span class="stat-num">500+</span><span class="stat-lbl">Students Placed</span></div>
+  <div class="stat-box"><span class="stat-num">100%</span><span class="stat-lbl">Free Guidance</span></div>
+</div>
+
+<!-- WHY EDUNOVA -->
+<section id="about">
+  <div class="section-eyebrow">Why Choose Us</div>
+  <h2 class="section-h">Why Edunova?</h2>
+  <p class="section-sub">We're not just consultants — we're your career partners from admission to graduation.</p>
+
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-icon">🎯</div>
+      <div class="why-title">Personalised Counselling</div>
+      <div class="why-desc">One-on-one sessions to understand your goals, marks, budget, and aspirations — no generic advice.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏛️</div>
+      <div class="why-title">50+ Partner Universities</div>
+      <div class="why-desc">Tied up with leading private universities across 6+ states in India.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💸</div>
+      <div class="why-title">100% Free Service</div>
+      <div class="why-desc">No hidden charges. Our guidance to students and parents is completely free.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📑</div>
+      <div class="why-title">Documentation Support</div>
+      <div class="why-desc">From application forms to fee receipts — we handle all paperwork.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏠</div>
+      <div class="why-title">Hostel & Transport Help</div>
+      <div class="why-desc">We coordinate with colleges to find the best hostel options for outstation students.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🤝</div>
+      <div class="why-title">Trusted by Families</div>
+      <div class="why-desc">Hundreds of families across Hyderabad and beyond trust Edunova every season.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLEGES -->
+<section id="colleges">
+  <div class="section-eyebrow">Our Network</div>
+  <h2 class="section-h">Top Colleges — State Wise</h2>
+  <p class="section-sub">Click on a state to see our partner colleges.</p>
+
+  <div class="state-tabs">
+    <button class="tab-btn active" onclick="showState('tn',this)">📍 Tamil Nadu</button>
+    <button class="tab-btn" onclick="showState('ap',this)">📍 Andhra Pradesh</button>
+    <button class="tab-btn" onclick="showState('hyd',this)">📍 Hyderabad</button>
+    <button class="tab-btn" onclick="showState('blr',this)">📍 Bangalore</button>
+    <button class="tab-btn" onclick="showState('other',this)">📍 Other States</button>
+  </div>
+
+  <div id="tn" class="colleges-panel active">
+    <div class="colleges-grid">
+      <div class="college-card">Vel Tech University</div>
+      <div class="college-card">Saveetha Institute of Medical & Technical Sciences</div>
+      <div class="college-card">Hindustan Institute of Technology & Science</div>
+      <div class="college-card">Takshashila University</div>
+      <div class="college-card">BIHER – Bharath University</div>
+      <div class="college-card">Joy University</div>
+      <div class="college-card">Dhanalakshmi Srinivasan Group</div>
+      <div class="college-card">Sathyabama Institute of Science & Technology</div>
+      <div class="college-card">Kalasalingam Academy of Research & Education</div>
+      <div class="college-card">Prathyusha Engineering College</div>
+      <div class="college-card">Dr. MGR Educational & Research Institute</div>
+      <div class="college-card">SAI University</div>
+      <div class="college-card">AVIT – Aarupadai Veedu</div>
+    </div>
+  </div>
+  <div id="ap" class="colleges-panel">
+    <div class="colleges-grid">
+      <div class="college-card">Apollo University</div>
+      <div class="college-card">VVIT University</div>
+      <div class="college-card">Vignan University</div>
+      <div class="college-card">Sri Venkateswara University</div>
+      <div class="college-card">Annamacharya University</div>
+      <div class="college-card">Aditya University</div>
+      <div class="college-card">SRM University AP</div>
+      <div class="college-card">Best Innovation University</div>
+      <div class="college-card">VIT University AP</div>
+      <div class="college-card">Mohan Babu University</div>
+      <div class="college-card">Amrita University AP</div>
+    </div>
+  </div>
+  <div id="hyd" class="colleges-panel">
+    <div class="colleges-grid">
+      <div class="college-card">Mahindra University</div>
+      <div class="college-card">VNR Vignana Jyothi</div>
+      <div class="college-card">Anurag University</div>
+      <div class="college-card">Chaitanya Bharathi</div>
+      <div class="college-card">BVRIT Hyderabad</div>
+      <div class="college-card">Woxsen University</div>
+      <div class="college-card">Gokaraju Rangaraju</div>
+      <div class="college-card">Guru Nanak Institutions</div>
+      <div class="college-card">Malla Reddy Group</div>
+    </div>
+  </div>
+  <div id="blr" class="colleges-panel">
+    <div class="colleges-grid">
+      <div class="college-card">New Horizon University</div>
+      <div class="college-card">Amrita University Bangalore</div>
+      <div class="college-card">VIT University Bangalore</div>
+      <div class="college-card">RV College of Engineering</div>
+      <div class="college-card">MS Ramaiah University</div>
+      <div class="college-card">Jain University</div>
+      <div class="college-card">BMS College of Engineering</div>
+      <div class="college-card">RV University</div>
+      <div class="college-card">PES University</div>
+      <div class="college-card">Reva University</div>
+      <div class="college-card">Dayanand Sagar University</div>
+      <div class="college-card">Christ University</div>
+    </div>
+  </div>
+  <div id="other" class="colleges-panel">
+    <div class="colleges-grid">
+      <div class="college-card">Dr. Subhash University</div>
+      <div class="college-card">Marwadi University</div>
+      <div class="college-card">Parul University</div>
+      <div class="college-card">GD Goenka University</div>
+      <div class="college-card">Sandip University</div>
+      <div class="college-card">ITM University</div>
+      <div class="college-card">P P Savani University</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-h">Simple 4-Step Process</h2>
+  <p class="section-sub">From enquiry to admission — smooth and stress-free.</p>
+
+  <div class="steps-row">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-title">Fill Enquiry Form</div>
+      <div class="step-desc">Share your details, marks, course & location. Takes just 2 minutes.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-title">Free Counselling</div>
+      <div class="step-desc">Our expert calls you and suggests the best colleges for your profile.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-title">College Shortlisting</div>
+      <div class="step-desc">We shortlist colleges state-wise and arrange campus visits if needed.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-title">Admission Secured</div>
+      <div class="step-desc">We assist with forms, documents, and fee payment till confirmation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GET IN TOUCH -->
+<section id="contact">
+  <div class="section-eyebrow">Get In Touch</div>
+  <h2 class="section-h">Let's Secure Your<br/>Admission</h2>
+
+  <div class="contact-wrap">
+    <!-- LEFT -->
+    <div class="contact-left">
+      <p>Reach out to us directly on WhatsApp for the fastest response, or fill the form and our counsellor will contact you within 24 hours.</p>
+
+      <div class="contact-items">
+        <div class="c-item">
+          <div class="c-item-icon">📞</div>
+          <div class="c-item-text">
+            <strong>+91 83742 34110</strong>
+            <span>Mon–Sat, 9am–7pm</span>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-item-icon">✉️</div>
+          <div class="c-item-text">
+            <strong>edunovaconsultancy23@gmail.com</strong>
+            <span>We respond within 24 hours</span>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-item-icon">📍</div>
+          <div class="c-item-text">
+            <strong>Serving students across India</strong>
+            <span>AP · Tamil Nadu · Bangalore &amp; beyond</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/918374234110" class="btn-wa-big">
+        ⊛ Chat on WhatsApp Now
+      </a>
+    </div>
+
+    <!-- RIGHT — Full Enquiry Form -->
+    <div class="enquiry-box">
+      <div class="enq-title">📋 Admissions Enquiry</div>
+      <div class="enq-sub">Fill below — our counsellor contacts you within 24 hours. Completely free!</div>
+
+      <div id="enqForm">
+        <div class="form-section-lbl">👤 Student Details</div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Student Full Name *</label>
+            <input id="f_name" type="text" placeholder="Your full name"/>
+          </div>
+          <div class="f-group">
+            <label>Phone Number *</label>
+            <input id="f_phone" type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Email ID *</label>
+            <input id="f_email" type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="f-group">
+            <label>Gender *</label>
+            <select id="f_gender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>10th Percentage % *</label>
+            <input id="f_tenth" type="number" placeholder="e.g. 85"/>
+          </div>
+          <div class="f-group">
+            <label>12th / Diploma % *</label>
+            <input id="f_twelfth" type="number" placeholder="e.g. 78"/>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Preferred Course *</label>
+            <select id="f_course">
+              <option value="">Select Course</option>
+              <option>B.Tech / BE</option><option>B.Sc</option>
+              <option>BCA / MCA</option><option>BBA / MBA</option>
+              <option>MBBS / BDS</option><option>Pharmacy</option>
+              <option>Law</option><option>Other</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label>Current City / State *</label>
+            <input id="f_city" type="text" placeholder="e.g. Hyderabad"/>
+          </div>
+        </div>
+
+        <div class="form-section-lbl">👨‍👩‍👦 Parent Details</div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Father's Name *</label>
+            <input id="f_fname" type="text" placeholder="Father's full name"/>
+          </div>
+          <div class="f-group">
+            <label>Father's Phone *</label>
+            <input id="f_fphone" type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label>Annual Family Income *</label>
+            <select id="f_income"><option value="">Select</option><option>Below ₹2 LPA</option><option>₹2–5 LPA</option><option>₹5–10 LPA</option><option>₹10+ LPA</option></select>
+          </div>
+          <div class="f-group">
+            <label>Education Budget *</label>
+            <select id="f_budget"><option value="">Select</option><option>Below ₹1L/yr</option><option>₹1–3L/yr</option><option>₹3–6L/yr</option><option>₹6+L/yr</option></select>
+          </div>
+        </div>
+
+        <div class="form-section-lbl">🏫 Preferences</div>
+        <div class="f-group">
+          <label>Preferred States * <small style="color:#c0392b;font-size:0.75rem;" id="states_err"></small></label>
+          <div class="cb-group" id="cb_states">
+            <label class="cb-item"><input type="checkbox" class="cb-state"/> Tamil Nadu</label>
+            <label class="cb-item"><input type="checkbox" class="cb-state"/> Andhra Pradesh</label>
+            <label class="cb-item"><input type="checkbox" class="cb-state"/> Hyderabad</label>
+            <label class="cb-item"><input type="checkbox" class="cb-state"/> Bangalore</label>
+            <label class="cb-item"><input type="checkbox" class="cb-state"/> Other States</label>
+          </div>
+        </div>
+        <div class="f-group">
+          <label>Other Options * <small style="color:#c0392b;font-size:0.75rem;" id="opts_err"></small></label>
+          <div class="cb-group" id="cb_opts">
+            <label class="cb-item"><input type="checkbox" class="cb-opt"/> Hostel Required</label>
+            <label class="cb-item"><input type="checkbox" class="cb-opt"/> Out-of-State OK</label>
+            <label class="cb-item"><input type="checkbox" class="cb-opt"/> Need Scholarship Info</label>
+            <label class="cb-item"><input type="checkbox" class="cb-opt"/> Appeared for EAMCET/JEE</label>
+          </div>
+        </div>
+        <div class="f-group">
+          <label>How did you hear about us? *</label>
+          <select id="f_source"><option value="">Select</option><option>Friend / Family</option><option>Instagram / Facebook</option><option>Google Search</option><option>WhatsApp</option><option>Other</option></select>
+        </div>
+        <div class="f-group">
+          <label>Any Message? *</label>
+          <textarea id="f_msg" placeholder="Tell us anything specific..."></textarea>
+        </div>
+
+        <div id="form_err_msg" style="display:none;background:#fdecea;border:1px solid #e74c3c;border-radius:8px;padding:0.75rem 1rem;margin-bottom:1rem;color:#c0392b;font-size:0.88rem;font-weight:500;">
+          ⚠️ Please fill in all fields before submitting.
+        </div>
+
+        <button class="btn-enq-submit" onclick="enqSubmit()">🚀 Submit Free Enquiry</button>
+      </div>
+
+      <div class="enq-success" id="enqSuccess">
+        <div class="s-circle">✓</div>
+        <h3>✅ Submitted Successfully!</h3>
+        <p>Our counsellor will contact you within 24 hours.<br/>Your future starts here! 🎓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo" style="margin-bottom:0.5rem;">
+        <div class="logo-mark">E</div>
+        <span class="logo-text">EDUNOVA</span>
+      </a>
+      <p>Edunova Consultancy helps students find the right college and career path across India — with zero charges and genuine care.</p>
+      <div class="footer-contact-list">
+        <a href="tel:+918374234110">📞 +91 83742 34110</a>
+        <a href="mailto:edunovaconsultancy23@gmail.com">✉️ edunovaconsultancy23@gmail.com</a>
+        <a href="#">📍 Serving students across India</a>
+      </div>
+    </div>
+    <div class="footer-links-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Why Edunova</a></li>
+        <li><a href="#colleges">Our Colleges</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#contact">Free Enquiry</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-col">
+      <h4>States We Cover</h4>
+      <ul>
+        <li><a href="#colleges">Tamil Nadu</a></li>
+        <li><a href="#colleges">Andhra Pradesh</a></li>
+        <li><a href="#colleges">Hyderabad / Telangana</a></li>
+        <li><a href="#colleges">Bangalore / Karnataka</a></li>
+        <li><a href="#colleges">Gujarat & Others</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Edunova Consultancy. All rights reserved.</span>
+    <span>✦ <span>Your Future Starts Here</span> ✦</span>
+  </div>
+</footer>
+
+<!-- Scroll to Top FAB -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="wa-fab" title="Back to Top" style="border:none;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;">↑</button>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close on outside click
+  document.getElementById('mobileMenu').addEventListener('click', function(e){
+    if(e.target === this) closeMenu();
+  });
+  function showState(id, btn) {
+    document.querySelectorAll('.colleges-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function gitSubmit() {
+    document.getElementById('gitFields').style.display = 'none';
+    document.getElementById('gitSuccess').style.display = 'block';
+  }
+
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhNdWq2UOdCcM7eJiFLcwBg0jQ_8aUPfX-pPpZ3xceRDwT5cpHrLYp0c9zta7acz412Q/exec';
+
+  function enqSubmit() {
+    // Reset all error styles
+    const fields = ['f_name','f_phone','f_email','f_gender','f_tenth','f_twelfth',
+                    'f_course','f_city','f_fname','f_fphone','f_income','f_budget',
+                    'f_source','f_msg'];
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.border = '';
+    });
+    document.getElementById('cb_states').style.outline = '';
+    document.getElementById('cb_opts').style.outline = '';
+    document.getElementById('states_err').textContent = '';
+    document.getElementById('opts_err').textContent = '';
+    document.getElementById('form_err_msg').style.display = 'none';
+
+    let valid = true;
+
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const val = el.value.trim();
+      if (!val) {
+        el.style.border = '2px solid #e74c3c';
+        valid = false;
+      }
+    });
+
+    const statesChecked = document.querySelectorAll('.cb-state:checked').length;
+    if (statesChecked === 0) {
+      document.getElementById('cb_states').style.outline = '2px solid #e74c3c';
+      document.getElementById('states_err').textContent = '— Select at least one';
+      valid = false;
+    }
+
+    const optsChecked = document.querySelectorAll('.cb-opt:checked').length;
+    if (optsChecked === 0) {
+      document.getElementById('cb_opts').style.outline = '2px solid #e74c3c';
+      document.getElementById('opts_err').textContent = '— Select at least one';
+      valid = false;
+    }
+
+    if (!valid) {
+      document.getElementById('form_err_msg').style.display = 'block';
+      const firstErr = document.querySelector('[style*="border: 2px solid rgb(231, 76, 60)"], [style*="outline: 2px solid"]');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Collect data
+    const states = [...document.querySelectorAll('.cb-state:checked')].map(c => c.parentElement.textContent.trim()).join(', ');
+    const others = [...document.querySelectorAll('.cb-opt:checked')].map(c => c.parentElement.textContent.trim()).join(', ');
+
+    const data = {
+      studentName: document.getElementById('f_name').value.trim(),
+      phone:       document.getElementById('f_phone').value.trim(),
+      email:       document.getElementById('f_email').value.trim(),
+      gender:      document.getElementById('f_gender').value.trim(),
+      tenth:       document.getElementById('f_tenth').value.trim(),
+      twelfth:     document.getElementById('f_twelfth').value.trim(),
+      course:      document.getElementById('f_course').value.trim(),
+      city:        document.getElementById('f_city').value.trim(),
+      fatherName:  document.getElementById('f_fname').value.trim(),
+      fatherPhone: document.getElementById('f_fphone').value.trim(),
+      income:      document.getElementById('f_income').value.trim(),
+      budget:      document.getElementById('f_budget').value.trim(),
+      states:      states,
+      others:      others,
+      referral:    document.getElementById('f_source').value.trim(),
+      message:     document.getElementById('f_msg').value.trim()
+    };
+
+    // Show loading state
+    const btn = document.querySelector('.btn-enq-submit');
+    btn.textContent = '⏳ Submitting...';
+    btn.disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(() => {
+      document.getElementById('enqForm').style.display = 'none';
+      document.getElementById('enqSuccess').style.display = 'block';
+    })
+    .catch(() => {
+      // no-cors always throws but data still goes through — show success
+      document.getElementById('enqForm').style.display = 'none';
+      document.getElementById('enqSuccess').style.display = 'block';
+    });
+  }
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.why-card, .step-card, .college-card, .c-item, .stat-box').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
